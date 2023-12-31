@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(https://c1.wallpaperflare.com/preview/674/546/375/coast-ocean-sea-summer.jpg);
+    background-size: cover;
+    background-position: center;
+    height:80%;
+}
+.sign-up{
+    width: 340px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    background: cornsilk;
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+}
+.sign-up h1{
+    color: rgb(72, 2, 100);
+    margin-bottom: 30px;
+}
+.input-box{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid rgb(0, 217, 255);
+    outline-color: rgb(70, 82, 250);
+}
+button{
+    background-color: rgb(255, 168, 229);
+    font-weight: bold;
+    color: rgb(96, 0, 160);
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border:none;
+    outline: none;
+    cursor: pointer;   
+    overflow: hidden; 
+}
+.or{
+    background: cornsilk;
+    color: brown;
+    width: 30px;
+    font-weight: bold;
+    margin: -19px auto 10px;
+}
+img{
+    width: 70px;
+}
+span
+{
+    background: rgb(0, 60, 255);
+    height: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button.signup-btn:hover span{
+    width: 100%;
+    background-color: blue;
+}
