@@ -1,24 +1,41 @@
-<html>
-    <head>
-        <title>
-            goat.in/signup
-        </title>
-        <link rel="stylesheet" href="style2.css">
-    </head>
-    <body>
-        <div class="sign-up">
-            <img src="C:\Users\Subhankar\Desktop\website 2\images\usericon.png">
-            <h1>SIGN UP NOW</h1>
-            <form>
-                <input type="email" class="input-box" placeholder="Your Email">
-                <input type="password" class="input-box" placeholder="Your Password">
-                <p><input type="checkbox"> I agree to the terms of services</p>
-                <a href="https://github.com/d3l3te-cloud/webhost/blob/main/websitepage1.html"><button type="button" class="signup-btn"><span></span>Sign Up</button></a>
-                <hr>
-                <p class="or">OR</p>
-                <button type="button" class="twitter-btn"><span></span>Login with Twitter</button>
-                <p>Do you have an account? <A href="#">Sign up</A></p>
-            </form>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Video Player</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .video-wrapper {
+        max-width: 800px;
+        margin: 50px auto;
+    }
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+
+<div class="video-wrapper">
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+</body>
 </html>
