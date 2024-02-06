@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Video Player</title>
+<title>Custom YouTube Video Player</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -14,28 +14,57 @@
         max-width: 800px;
         margin: 50px auto;
     }
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    #player {
+        width: 100%;
         height: 0;
-        overflow: hidden;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        position: relative;
     }
-    .video-container iframe {
+    #player iframe {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
+        top: 0;
+        left: 0;
     }
 </style>
 </head>
 <body>
 
 <div class="video-wrapper">
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VLVIfPX5wnY?si=aGejJ7nsLvLaSlsf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
+    <div id="player"></div>
 </div>
+
+<script>
+    // Load the YouTube Player API asynchronously
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'VLVIfPX5wnY?si=XvGkR5BxNRQzZDbg', // Replace VIDEO_ID with the ID of the YouTube video
+            playerVars: {
+                'controls': 0, // Hide player controls
+                'disablekb': 1, // Disable keyboard control
+                'fs': 0, // Disable fullscreen button
+                'modestbranding': 1, // Hide YouTube logo
+                'rel': 0, // Hide related videos at the end
+                'showinfo': 0 // Hide video title and uploader
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // Autoplay the video
+        event.target.playVideo();
+    }
+</script>
 
 </body>
 </html>
